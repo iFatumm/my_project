@@ -1,10 +1,20 @@
-// import axios from 'axios';
-//
-// const axiosInstance = axios.create({
-//     baseURL: 'https://api.themoviedb.org/3/movie/550?api_key=a296ef82c928c2bafbb589fa52f17cce',
-//     headers: {}
-// })
-//
-// const getFilms = (id) => axiosInstance('/+id');
-//
-// export {getFilms}
+import axios from 'axios';
+
+const axiosInstance = axios.create({
+    baseURL: 'https://api.themoviedb.org/3',
+    headers: {
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjk2ZWY4MmM5MjhjMmJhZmJiNTg5ZmE1MmYxN2NjZSIsInN1YiI6IjYxMDA4MDZkZGI3MmMwM2JmYjFmY2VhZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CBKIfqOtWksBsRO35JHiyTPeVcklGJsfZKlEx1pqBds'
+    }
+})
+
+const getFilms = async () => {
+    const {data} = await axiosInstance('/discover/movie') || {};
+    return data;
+}
+
+const getFilm = async (id) => {
+    const {data} = await axiosInstance(`/movie/${id}`);
+    return data;
+}
+
+export {getFilms, getFilm}
