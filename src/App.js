@@ -2,13 +2,14 @@ import Films from "./components/films/Films";
 import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 import Film from "./components/one film/Film";
 import FilmDetails from "./components/details/FilmDetails";
+import './App.css';
 
 
 export default function App() {
 
     return (
-        <Router>
-            {/*<div><button><Link to={''}>one film</Link></button></div>*/}
+        <div className="main"><Router>
+
 
             <Switch>
                 <Redirect exact from={'/'} to={'/movies'}/>
@@ -17,5 +18,6 @@ export default function App() {
             </Switch>
 
         </Router>
+        </div>
     );
 }

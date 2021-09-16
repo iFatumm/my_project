@@ -12,7 +12,15 @@ export default function FilmDetails() {
     }, [id])
     return (
         <div>
-            <div><b>{film.id} - {film.title}</b></div>
+            <div>
+                <b>{film.id} - {film.title}</b>
+                {film.adult}<br/>
+                {film.original_language}<br/>
+                Overview: <i>{film.overview}</i><br/>
+                {film.release_date}<br/>
+                <b>Popularity:</b> {film.popularity}<br/>
+            </div>
+
             <br/>
             {<img src={'https://image.tmdb.org/t/p/w500' + film.poster_path} alt=""/>}
 
