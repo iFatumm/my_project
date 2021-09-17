@@ -6,9 +6,12 @@ import './App.css';
 
 
 export default function App() {
+    const isBackgroundAqua = true;
 
     return (
-        <div className="main"><Router>
+        <div className="main" style={{
+            backgroundColor: isBackgroundAqua ? 'aqua' : 'blue',
+        }}><Router>
 
 
             <Switch>
